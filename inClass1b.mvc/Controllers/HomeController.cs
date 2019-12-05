@@ -5,29 +5,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using inClass1b.mvc.Models;
+using inClass1b.mvc.Models.Portifolio;
 
 namespace inClass1b.mvc.Controllers
 {
     public class HomeController : Controller
     {
+        private PortfolioContext db;
+        // Initialize context when controller is created.
+        public HomeController(PortfolioContext db)
+        {
+            this.db = db;
+            Seeder seeder = new Seeder(db);
+        }
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-        //public IActionResult About()
-        //{
-        //    return View();
-        //}
-
-        public string About()
-        {
-            return "Hello";
-        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

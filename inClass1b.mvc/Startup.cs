@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using inClass1b.mvc.Models.FoodStore;
+using inClass1b.mvc.Models.Portifolio;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -31,7 +34,17 @@ namespace inClass1b.mvc
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            var connection = Configuration.GetConnectionString("PortfolioConnection");
+            var connection2 = Configuration.GetConnectionString("FoodStoreConnection");
+            services.AddDbContext<PortfolioContext>(options => options.UseSqlite(
+                Configuration.GetConnectionString("PortfolioConnection")
+                )
+            );
+          //  services.AddDbContext<FoodStoreContext>(options => options.UseSqlServer(connection2));
+            services.AddDbContext<FoodStoreContext>(options => options.UseSqlite(
+                Configuration.GetConnectionString("FoodStoreConnection")
+                )
+            );
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

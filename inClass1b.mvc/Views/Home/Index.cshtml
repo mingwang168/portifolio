@@ -1,8 +1,8 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Minghui Wang</h1>
-    
-</div>
+<h2>@ViewData["Title"]</h2>
+
+<partial name="Partials/_LinksPartial" />
