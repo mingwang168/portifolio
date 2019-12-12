@@ -9,6 +9,7 @@ using inClass1b.mvc.Models.Portifolio;
 
 namespace inClass1b.mvc.Controllers
 {
+
     public class HomeController : Controller
     {
         private PortfolioContext db;
@@ -18,6 +19,7 @@ namespace inClass1b.mvc.Controllers
             this.db = db;
             Seeder seeder = new Seeder(db);
         }
+
 
         public IActionResult Index()
         {

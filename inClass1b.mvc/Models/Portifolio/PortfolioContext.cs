@@ -14,6 +14,9 @@ namespace inClass1b.mvc.Models.Portifolio
         public DbSet<Technology> Technologies { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectTechnology> ProjectTechnologies { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<InterviewRequest> InterviewRequests { get; set; }
+
 
         // override of parent DbContext's virtual method.
         protected override void OnModelCreating(ModelBuilder modelBuilder)

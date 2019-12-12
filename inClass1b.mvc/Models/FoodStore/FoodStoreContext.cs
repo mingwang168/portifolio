@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using inClass1b.mvc.Models.Portifolio;
 
 namespace inClass1b.mvc.Models.FoodStore
 {
@@ -283,5 +284,9 @@ namespace inClass1b.mvc.Models.FoodStore
                     .IsUnicode(false);
             });
         }
+
+        
+
+        public DbSet<inClass1b.mvc.Models.Portifolio.Company> Company { get; set; }
     }
 }
