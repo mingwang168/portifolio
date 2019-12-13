@@ -1,5 +1,4 @@
 ﻿@model inClass1b.mvc.Models.Portifolio.Project
-
 @{
     ViewData["Title"] = "Details";
 }
@@ -10,23 +9,23 @@
     <h4>Project</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Title)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Description)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Url)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Url)
+        <dd class="col-sm-10">
+            <a href="@Html.DisplayFor(model => model.Url)" target="_blank">@Html.DisplayFor(model => model.Url)</a>
         </dd>
     </dl>
 </div>
