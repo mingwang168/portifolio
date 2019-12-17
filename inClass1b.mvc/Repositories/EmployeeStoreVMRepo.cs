@@ -18,8 +18,7 @@ namespace inClass1b.mvc.Repositories
 
         public IEnumerable<EmployeeStoreVM> GetAll()
         {
-
-            IEnumerable<EmployeeStoreVM> esList
+               IEnumerable<EmployeeStoreVM> esList
                 = db.Employee.Where(es => es.BranchNavigation.Branch == es.Branch)
                     // Assign properties within the 'Select' statement.
                     // Notice how we 'must' use the 'EmployeeStoreVM' type.

@@ -9,55 +9,25 @@ namespace inClass1b.mvc.Repositories
 {
     public class ProjectTechnologiesVMRepo
     {
-        private readonly PortfolioContext _db;
+        private readonly PortfolioContext db;
+
         public ProjectTechnologiesVMRepo(PortfolioContext db)
         {
-            _db = db;
+            this.db = db;
         }
 
-        private IEnumerable<ProjectTechnologiesVM> GetAll()
+        public IEnumerable<ProjectTechnologiesVM> GetAll()
         {
-            return _db.Projects
-                .Select(p => new ProjectTechnologiesVM
-                {
-                    Project = p,
-                    Technologies = p.ProjectTechnologies
-                   .Select(t => t.Technology)
-                });
-        }
-
-        public IEnumerable<ProjectTechnologiesVM> Sort(string sortOrder, string searchString)
-        {
-            var results = GetAll();
-            if (!String.IsNullOrEmpty(searchString))
+            return db.Projects.Select(p => new ProjectTechnologiesVM()
             {
-                results = results
-                    .Where(pt => pt.Project.Title.ToLower().Contains(searchString.ToLower())
-                    || pt.Technologies.Any(t => t.Name.ToLower().Contains(searchString.ToLower())));
-            }
-
-            switch (sortOrder)
-            {
-                case "title_desc":
-                    results = results.OrderByDescending(r => r.Project.Title);
-                    break;
-                case "description_asc":
-                    results = results.OrderBy(r => r.Project.Description);
-                    break;
-                case "description_desc":
-                    results = results.OrderByDescending(r => r.Project.Description);
-                    break;
-                default:
-                    results = results.OrderBy(r => r.Project.Title);
-                    break;
-            }
-            return results;
+                Project = p,
+                Technologies = p.ProjectTechnologies.Select(t => t.Technology)
+            });
         }
 
-        public ProjectTechnologiesVM Get(int projId)
+        public ProjectTechnologiesVM GetDetails(int id)
         {
-            return GetAll()
-                    .FirstOrDefault(p => p.Project.ProjectId == projId);
+            return GetAll().FirstOrDefault(pt => pt.Project.ProjectId == id);
         }
     }
 }

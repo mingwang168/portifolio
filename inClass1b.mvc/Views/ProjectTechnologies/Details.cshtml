@@ -1,22 +1,38 @@
 ﻿@model inClass1b.mvc.ViewModels.ProjectTechnologiesVM
-
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Model.Project.Title;
 }
 
-<h1>Details</h1>
-
-
 <div>
-    <h4>Tech Used</h4>
-    <hr />
-    <ol>
-        @foreach (var item in Model.Technologies)
-        {
-            <li>@item.Name</li>
-        }
-    </ol>
+    <h1>@ViewData["Title"]</h1>
+
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Description</th>
+                <td>@Model.Project.Description</td>
+            </tr>
+            <tr>
+                <th>URL</th>
+                <td><a class="text-decoration-none" href="@Model.Project.Url" target="_blank">@Model.Project.Url</a></td>
+            </tr>
+            <tr>
+                <th>Technologies</th>
+                <td>
+                    <ul>
+                        @foreach (var item in Model.Technologies)
+                        {
+                            <li>@item.Name</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="text-decoration-none" asp-action="Index">Back to Projects</a> |
+    @Html.ActionLink("Request Interview", "InterviewRequests")
 </div>

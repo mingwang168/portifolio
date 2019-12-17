@@ -1,9 +1,26 @@
 ﻿@model IEnumerable<inClass1b.mvc.ViewModels.ProjectTechnologiesVM>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Projects";
 }
 
-<h1>Index</h1>
+<div>
+    <h1 class="text-center text-white">@ViewData["Title"]</h1>
+    <hr />
 
-
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 mb-3">
+                <div class="card">
+                    <div class="card-header bg-light font-weight-bold">@item.Project.Title</div>
+                    <div class="card-body">
+                        <p class="card-text">@item.Project.Description</p>
+                        <a class="text-decoration-none" asp-action="Details" asp-route-id=@item.Project.ProjectId>Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <a asp-action="InterviewRequests">Request Interview</a>
+</div>
