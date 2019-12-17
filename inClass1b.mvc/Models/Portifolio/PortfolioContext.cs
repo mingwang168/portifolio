@@ -27,15 +27,15 @@ namespace inClass1b.mvc.Models.Portifolio
 
             // Define bridge table's foreign keys.
             modelBuilder.Entity<ProjectTechnology>()
-              .HasOne(tp => tp.Technology)
-              .WithMany(tp => tp.ProjectTechnologies)
-              .HasForeignKey(fk => new { fk.TechnologyName })
+              .HasOne(tp => tp.Technology)//主表名
+              .WithMany(tp => tp.ProjectTechnologies)//桥表名
+              .HasForeignKey(fk => new { fk.TechnologyName })//桥表外键名
               .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
 
             modelBuilder.Entity<ProjectTechnology>()
-              .HasOne(tp => tp.Project)
-              .WithMany(tp => tp.ProjectTechnologies)
-              .HasForeignKey(fk => new { fk.ProjectId })
+              .HasOne(tp => tp.Project)//主表名
+              .WithMany(tp => tp.ProjectTechnologies)//桥表名
+              .HasForeignKey(fk => new { fk.ProjectId })//桥表外键名
               .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
         }
 
