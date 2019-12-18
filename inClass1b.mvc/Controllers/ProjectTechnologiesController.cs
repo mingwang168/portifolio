@@ -18,8 +18,7 @@ namespace inClass1b.mvc.Controllers
         {
             _db = db;
         }
-
-        [Route("Projects")]
+                
         public IActionResult Index()
         {
             //var results = _db.ProjectTechnologies.Include(pt => pt.Project).Include(pt => pt.Technology);
