@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using inClass1b.mvc.Models.Portifolio;
+using inClass1b.mvc.Repositories;
 using inClass1b.mvc.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,6 +26,7 @@ namespace Portfolio.Controllers
         [HttpPost]
         public IActionResult Create(InterviewRequestVM irVM)
         {
+            new InterviewRequestVMRepo(_context).Create(irVM);
             return RedirectToAction("Index", "Home");
         }
     }
