@@ -18,7 +18,10 @@ namespace inClass1b.mvc.Repositories
         {
             return db.Product.FirstOrDefault(p => p.ProductId == id);
         }
-
+        public Product GetAll(string vendor)
+        {
+            return db.Product.FirstOrDefault(p => p.Vendor == vendor);
+        }
         public bool Update(int id, string name, string mfg, string vendor, decimal? price)
         {
             Product product = db.Product
@@ -32,6 +35,17 @@ namespace inClass1b.mvc.Repositories
             db.SaveChanges();
             return true;
         }
-
+        //public bool UpdateFromSupplier(IEnumerable<Product> products)
+        //{
+        //    Employee employee = db.Employee
+        //        .FirstOrDefault(e => e.EmployeeId == id);
+        //    // Remember you can't update the primary key without 
+        //    // causing trouble.  Just update the first and last names
+        //    // for now.
+        //    employee.FirstName = first;
+        //    employee.LastName = last;
+        //    db.SaveChanges();
+        //    return true;
+        //}
     }
 }

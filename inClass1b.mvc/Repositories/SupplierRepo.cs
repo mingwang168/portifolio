@@ -28,5 +28,17 @@ namespace inClass1b.mvc.Repositories
             db.SaveChanges();
             return true;
         }
+        public bool UpdateFromSupplier(Supplier supplier)
+        {
+            Supplier supplier1 = db.Supplier.FirstOrDefault(s => s.Vendor == supplier.Vendor);
+            supplier1.Vendor = supplier.Vendor;
+            supplier1.SupplierEmail = 
+                supplier.SupplierEmail==null? "" :
+                supplier.SupplierEmail;
+            db.SaveChanges(); // Commit changes to database.
+
+            // Error handling code goes here.
+            return true;
+        }
     }
 }
