@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace inClass1b.mvc.Models.Portifolio
+namespace portifolio.mvc.Models.Portifolio
 {
     public class Company
     {

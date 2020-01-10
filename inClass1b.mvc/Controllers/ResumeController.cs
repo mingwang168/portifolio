@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace inClass1b.mvc.Controllers
+namespace portifolio.mvc.Controllers
 {
     public class ResumeController : Controller
     {

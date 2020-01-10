@@ -4,10 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using inClass1b.mvc.Models;
-using inClass1b.mvc.Models.Portifolio;
+using portifolio.mvc.Models;
+using portifolio.mvc.Models.Portifolio;
 
-namespace inClass1b.mvc.Controllers
+namespace portifolio.mvc.Controllers
 {
 
     public class HomeController : Controller

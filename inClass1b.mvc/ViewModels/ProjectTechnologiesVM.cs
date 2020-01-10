@@ -1,10 +1,10 @@
-﻿using inClass1b.mvc.Models.Portifolio;
+﻿using portifolio.mvc.Models.Portifolio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace inClass1b.mvc.ViewModels
+namespace portifolio.mvc.ViewModels
 {
     public class ProjectTechnologiesVM
     {

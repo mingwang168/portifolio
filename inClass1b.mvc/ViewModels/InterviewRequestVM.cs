@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace inClass1b.mvc.ViewModels
+namespace portifolio.mvc.ViewModels
 {
     public class InterviewRequestVM
     {

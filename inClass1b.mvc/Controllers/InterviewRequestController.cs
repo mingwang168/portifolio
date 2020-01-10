@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using inClass1b.mvc.Models.Portifolio;
-using inClass1b.mvc.Repositories;
-using inClass1b.mvc.ViewModels;
+using portifolio.mvc.Models.Portifolio;
+using portifolio.mvc.Repositories;
+using portifolio.mvc.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace Portfolio.Controllers
+namespace Portfolio.mvc.Controllers
 {
     public class InterviewRequestController : Controller
     {

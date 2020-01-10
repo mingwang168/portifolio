@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace inClass1b.mvc.Models.Portifolio
+namespace portifolio.mvc.Models.Portifolio
 {
     public class InterviewRequest
     {

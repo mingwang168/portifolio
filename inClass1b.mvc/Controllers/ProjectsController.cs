@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using inClass1b.mvc.Models.Portifolio;
+using portifolio.mvc.Models.Portifolio;
 
-namespace inClass1b.mvc.Controllers
+namespace portifolio.mvc.Controllers
 {
     public class ProjectsController : Controller
     {
